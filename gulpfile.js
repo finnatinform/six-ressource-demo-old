@@ -1,12 +1,12 @@
 let gulp = require('gulp');
+let webpack = require('webpack-stream');
 
 gulp.task('build', build);
 
 /**
  * Builds the software
- * @param {*} _Done 
  */
-function build( _Done ) {
-  // place code for your default task here
-  _Done();
+function build() {
+    // return gulp.src()
+    //            .pipe(webpack()) ;
 }

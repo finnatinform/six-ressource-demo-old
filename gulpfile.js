@@ -1,12 +1,14 @@
 let gulp = require('gulp');
 let webpack = require('webpack-stream');
+let webpackConfiguration = require('./webpack.config');
 
-gulp.task('build', build);
+gulp.task('default', defaultTask);
 
 /**
  * Builds the software
  */
-function build() {
-    // return gulp.src()
-    //            .pipe(webpack()) ;
+function defaultTask() {
+    return gulp.src('./src')
+        .pipe(webpack( webpackConfiguration ))
+        .pipe(gulp.dest('dist'))
 }

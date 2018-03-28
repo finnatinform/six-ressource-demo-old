@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as Styles from './app-module-matcher.scss' ;
 import Module from '../../internal/module';
 import { Switch, Route } from 'react-router';
+import { NotFoundView } from '../views/view-not-found';
 
 export interface IAppModuleMatcherProps {  }
 export interface IAppModuleMatcherState {
@@ -33,6 +34,7 @@ export class AppModuleMatcher extends React.Component<IAppModuleMatcherProps, IA
             <div className={Styles.application}>
                 <Switch>
                     {this.renderRoutes()}
+                    <Route component={NotFoundView} />
                 </Switch>
             </div>
         );

@@ -33,7 +33,7 @@ function buildClient(){
 }
 
 function deployDesktop(){
-    return gulp.src([ './views/desktop.html' , './dist/application.js' , './dist/application.js.map' ])
+    return gulp.src([ './views/desktop.html' , './dist/application.js' , './dist/application.js.map' , './data/simple.json' ])
                .pipe( gulpCopy( './dist/public' , { prefix : 1 } ) )
             //    .pipe( del( ['./dist/application.js'] ) );
 }

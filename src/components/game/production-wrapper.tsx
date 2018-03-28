@@ -16,6 +16,11 @@ export class ProductionWrapperState implements IProductionWrapperState{
 
 export class ProductionWrapper extends React.Component<IProductionWrapperProps, IProductionWrapperState> {
 
+    constructor( _Props : IProductionWrapperState ){
+        super(_Props);
+        this.state = new ProductionWrapperState();
+    }
+
     private renderProductionLevels(): Array<JSX.Element> {
         let HResult: Array<JSX.Element> = [];
 
@@ -25,6 +30,7 @@ export class ProductionWrapper extends React.Component<IProductionWrapperProps, 
 
         return HResult;
     }
+    
     render() {
         return (
             <div>

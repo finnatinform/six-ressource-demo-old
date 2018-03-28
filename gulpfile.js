@@ -1,5 +1,8 @@
 let gulp = require('gulp');
+let gulpCopy = require('gulp-copy');
 let webpack = require('webpack-stream');
+let del = require('del');
+
 let webpackClientConfiguration = require('./webpack.client.config');
 let webpackServerConfiguration = require('./webpack.server.config');
 
@@ -13,6 +16,8 @@ gulp.task('buildServer', buildServer);
 function defaultTask() {
     buildClient();
     buildServer();
+
+    deployDesktop();
 }
 
 function buildServer(){
@@ -25,4 +30,10 @@ function buildClient(){
     return gulp.src('./src')
         .pipe(webpack( webpackClientConfiguration ))
         .pipe(gulp.dest('dist'))
+}
+
+function deployDesktop(){
+    return gulp.src([ './views/desktop.html' , './dist/application.js' , './dist/application.js.map' ])
+               .pipe( gulpCopy( './dist/public' , { prefix : 1 } ) )
+            //    .pipe( del( ['./dist/application.js'] ) );
 }

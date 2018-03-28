@@ -1,6 +1,5 @@
 {
     "rules": {
-        "array-type": [true, "array"],
         "comment-format": [true,
             "check-space" ,
             "check-uppercase"

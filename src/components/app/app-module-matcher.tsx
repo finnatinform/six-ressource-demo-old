@@ -3,6 +3,7 @@ import * as Styles from './app-module-matcher.scss' ;
 import Module from '../../internal/module';
 import { Switch, Route } from 'react-router';
 import { NotFoundView } from '../views/view-not-found';
+import { Stores } from '../../stores/stores';
 
 export interface IAppModuleMatcherProps {  }
 export interface IAppModuleMatcherState {
@@ -13,7 +14,7 @@ export class AppModuleMatcherState implements IAppModuleMatcherState {
     Modules: Array<Module> ;
 
     constructor(){
-        this.Modules = [] ;
+        this.Modules = Stores.ModuleStore.Modules ;
     }
 }
 

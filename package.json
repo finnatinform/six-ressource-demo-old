@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "mobile": "cordova run android"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,16 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "typescript-ioc": "^1.1.1",
-    "typescript-rest": "^1.4.0"
+    "typescript-rest": "^1.4.0",
+    "cordova-android": "^7.0.0",
+    "cordova-plugin-whitelist": "^1.3.3"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {}
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }

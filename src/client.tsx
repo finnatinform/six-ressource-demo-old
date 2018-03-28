@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Application } from './components/application';
+import { AppRouter } from './components/app/app-router';
 
 ReactDOM.render(
-    <Application />,
+    <AppRouter />,
     document.getElementById('id-application')
 );

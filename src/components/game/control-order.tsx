@@ -25,6 +25,6 @@ export class OrderControl extends React.Component<IOrderControlProps, IOrderCont
     }
 
     render() {
-        return <h1>{this.state.Data.ScriptedDay}</h1>;
+        return <h1>{this.state.Data.Title}</h1>;
     }
 }

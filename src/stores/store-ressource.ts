@@ -5,20 +5,20 @@ import Ressource from '../data/item-ressource';
 
 export abstract class ARessourceStore extends DataStore<Ressource> {
     public abstract get ProductionLevelCount():number ;
-    public abstract getRessourceForProductionLevel( _ProductionLevel : number ):Array<Ressource> ;
+    public abstract getRessourcesForProductionLevel( _ProductionLevel : number ):Array<Ressource> ;
 }
 
 export class RessourceStore extends ARessourceStore {
     public get ProductionLevelCount(): number{
         let HLevel : number = 0;
 
-        while( this.getRessourceForProductionLevel(HLevel).length > 0 ){
+        while( this.getRessourcesForProductionLevel(HLevel).length > 0 ){
             HLevel++;
         }
 
         return HLevel ;
     }
-    public getRessourceForProductionLevel( _ProductionLevel : number ): Array<Ressource> {
+    public getRessourcesForProductionLevel( _ProductionLevel : number ): Array<Ressource> {
         return this.SearchItemsByCondition( ( _Item : Ressource ) => { return _Item.ProductionLevel == _ProductionLevel ; } );
     }
 }

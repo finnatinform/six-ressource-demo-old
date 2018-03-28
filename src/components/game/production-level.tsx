@@ -14,7 +14,7 @@ export class ProductionLevelState implements IProductionLevelState{
     Ressources : Array<Ressource> ;
 
     constructor( _Level : number ){
-        this.Ressources = Stores.RessourceStore.getRessourceForProductionLevel(_Level);
+        this.Ressources = Stores.RessourceStore.getRessourcesForProductionLevel(_Level);
     }
 }
 

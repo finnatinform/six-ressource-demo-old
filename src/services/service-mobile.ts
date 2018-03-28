@@ -6,6 +6,7 @@ export abstract class AMobileService extends Service {
 
 export class MobileService extends AMobileService {
     public IsMobile(): boolean {
+        // TODO: Geht mit cordova-plugin-device device.platform
         throw new Error('Method not implemented.');
     }
 }

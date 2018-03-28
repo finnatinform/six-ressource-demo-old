@@ -3,3 +3,4 @@ dist/
 platforms/
 plugins/
 www/
+*.scss.d.ts

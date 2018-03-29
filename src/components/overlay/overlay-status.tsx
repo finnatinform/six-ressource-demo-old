@@ -21,18 +21,12 @@ export class StatusOverlay extends React.Component<IStatusOverlayProps, IStatusO
         switch (this.state.ServerStatus) {
             case ServerStatus.SRV_RUNNING:
                 return 'green' ;
-                break;
             
             case ServerStatus.SRV_STOPPED:
                 return 'red' ;
-                break ;
 
             case ServerStatus.SRV_NEEDS_REBOOT:
                 return 'blue' ;
-                break ;
-
-            default:
-                break;
         }
     }
 
@@ -48,9 +42,6 @@ export class StatusOverlay extends React.Component<IStatusOverlayProps, IStatusO
                 break;
             case ServerStatus.SRV_NEEDS_REBOOT:
                 HStatusString = 'Server muss neugestartet werden';
-                break;
-
-            default:
                 break;
         }
 

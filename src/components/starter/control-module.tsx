@@ -4,7 +4,7 @@ import Module from '../../internal/module';
 import { Stores } from '../../stores/stores';
 
 export interface IModuleControlProps {
-    Path : string ;
+    Module : Module ;
 }
 export interface IModuleControlState {
     Module : Module ;
@@ -13,8 +13,8 @@ export interface IModuleControlState {
 export class ModuleControlState implements IModuleControlState{
     Module : Module ;
 
-    constructor( _Path : string ){
-        this.Module = Stores.ModuleStore.ModuleByPath(_Path);
+    constructor( _Module : Module ){
+        this.Module = _Module ;
     }
 }
 
@@ -24,7 +24,7 @@ export class ModuleControl extends React.Component<IModuleControlProps, IModuleC
     constructor( _Props : IModuleControlProps ){
         super(_Props);
 
-        this.state = new ModuleControlState(_Props.Path);
+        this.state = new ModuleControlState(_Props.Module);
     }
     
     render(): JSX.Element {

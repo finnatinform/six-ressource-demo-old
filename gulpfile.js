@@ -3,10 +3,12 @@ let gulpCopy = require('gulp-copy');
 let webpack = require('webpack-stream');
 let del = require('del');
 let cordova = require('cordova-lib').cordova ;
-
+let jest = require('gulp-jest').default;
 
 let webpackClientConfiguration = require('./webpack.client.config');
 let webpackServerConfiguration = require('./webpack.server.config');
+let webpackStarterConfiguration = require('./webpack.starter.config');
+let jestConfiguration = require('./jest.config');
 
 gulp.task('default', defaultTask);
 gulp.task('buildClient', buildClient);
@@ -16,12 +18,24 @@ gulp.task('buildServer', buildServer);
  * Builds the software
  */
 function defaultTask( _Done ) {
-    buildMobile( _Done );
+    // return gulp.src('./src').pipe(jest(jestConfiguration));
+    buildClient()
+    .then(buildStarter)
+    .then(buildServer)
+    .then(deployDesktop) 
+    .then(function(){
+        _Done();
+    });
 }
 
 function buildServer(){
-    return gulp.src('./src')
-        .pipe(webpack( webpackServerConfiguration )) ;
+    return new Promise( function(_Resolve , _Reject) {
+        gulp.src('./src')
+        .pipe(webpack( webpackServerConfiguration ))
+        .on('error',_Reject)
+        .pipe(gulp.dest('./dist'))
+        .on('end',_Resolve)
+    }) ;
 }
 
 // quasi prebuild
@@ -29,6 +43,16 @@ function buildClient(){
     return new Promise( function(_Resolve , _Reject) {
         gulp.src('./src')
         .pipe(webpack( webpackClientConfiguration ))
+        .on('error',_Reject)
+        .pipe(gulp.dest('./dist'))
+        .on('end',_Resolve)
+    }) ;
+}
+
+function buildStarter(){
+    return new Promise( function(_Resolve , _Reject) {
+        gulp.src('./src')
+        .pipe(webpack( webpackStarterConfiguration ))
         .on('error',_Reject)
         .pipe(gulp.dest('./dist'))
         .on('end',_Resolve)

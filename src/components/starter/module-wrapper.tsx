@@ -2,6 +2,7 @@ import * as React from 'react';
 import { HashRouter } from 'react-router-dom';
 import Module from '../../internal/module';
 import { Stores } from '../../stores/stores';
+import { ModuleControl } from './control-module';
 
 export interface IModuleWrapperProps { }
 export interface IModuleWrapperState {
@@ -30,7 +31,7 @@ export class ModuleWrapper extends React.Component<IModuleWrapperProps, IModuleW
 
         for( let HIndex : number = 0; HIndex < this.state.Modules.length ; HIndex++ ){
             HResult.push(
-                <ModuleControl />
+                <ModuleControl Module={this.state.Modules[HIndex]} />
             );
         }
 

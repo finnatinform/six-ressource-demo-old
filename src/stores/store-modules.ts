@@ -6,11 +6,11 @@ import { Modules } from '../config/modules';
 
 export abstract class AModuleStore extends Store<AppAction> {
     public abstract get Modules():Array<Module> ;
-    public abstract ModuleByPath():Module ;
+    public abstract ModuleByPath( _Path : string ):Module ;
 }
 
 export class ModuleStore extends AModuleStore{
-    public ModuleByPath( Path : string ): Module {
+    public ModuleByPath( _Path : string ): Module {
         let HItems : Array<Module> = this.SearchItemsByCondition( ( _Item : Module ) => { return _Item.Path == _Path ; } );
         switch (HItems.length) {
             case 0:
@@ -32,5 +32,17 @@ export class ModuleStore extends AModuleStore{
         super(_Dispatcher);
 
         this.__Items = Modules.registerModules();
+    }
+
+    protected SearchItemsByCondition( _Condition : ( _Item : Module ) => boolean ) : Array<Module> {
+        let HResult : Array<Module> = [] ;
+        for( let HIndex : number = 0 ; HIndex < this.__Items.length; HIndex++ ){
+            if( _Condition(this.__Items[HIndex]) ){
+                HResult.push(this.__Items[HIndex]);
+            }
+        }
+
+
+        return HResult ;
     }
 }

@@ -2,7 +2,7 @@ import flux = require('flux');
 
 import AppAction from './app-action' ;
 
-class QueuedDispatcher< T >  extends flux.Dispatcher< T >{
+export class QueuedDispatcher< T >  extends flux.Dispatcher< T >{
     private __PayLoadQueue : Array<T> ;
     private __IsProcessing : boolean ;
 
@@ -30,6 +30,3 @@ class QueuedDispatcher< T >  extends flux.Dispatcher< T >{
         this.queuePayload( _PayLoad );
     }
 }
-
-let AppDispatcher : QueuedDispatcher<AppAction> = new QueuedDispatcher();
-export = AppDispatcher ;

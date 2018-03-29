@@ -20,7 +20,7 @@ gulp.task('buildServer', buildServer);
 function defaultTask( _Done ) {
     // return gulp.src('./src').pipe(jest(jestConfiguration));
     buildClient()
-    .then(buildStarter)
+    // .then(buildStarter)
     .then(buildServer)
     .then(deployDesktop) 
     .then(function(){

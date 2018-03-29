@@ -3,6 +3,8 @@ import AppAction from '../app/app-action';
 import Module from '../internal/module';
 import { Dispatcher } from 'flux';
 import { Modules } from '../config/modules';
+import { Inject } from 'typescript-ioc';
+
 
 export abstract class AModuleStore extends Store<AppAction> {
     public abstract get Modules():Array<Module> ;
@@ -28,7 +30,9 @@ export class ModuleStore extends AModuleStore{
     public get Modules():Array<Module>{
         return this.__Items ;
     }
-    constructor( _Dispatcher : Dispatcher<AppAction> ){
+
+
+    constructor( @Inject _Dispatcher : Dispatcher<AppAction> ){
         super(_Dispatcher);
 
         this.__Items = Modules.registerModules();

@@ -1,6 +1,8 @@
 import { Store } from 'flux/utils' ;
 import AppAction from '../app/app-action';
 import Item from '../data/item';
+import { Dispatcher } from 'flux';
+import { Inject } from 'typescript-ioc';
 
 export default abstract class DataStore<T extends Item> extends Store< AppAction >{
     private __Items : Array<T> ;
@@ -30,6 +32,10 @@ export default abstract class DataStore<T extends Item> extends Store< AppAction
 
 
         return HResult ;
+    }
+
+    constructor( @Inject _Dispatcher : Dispatcher<AppAction> ){
+        super(_Dispatcher);
     }
 
 }

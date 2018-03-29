@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Ressource from '../../data/item-ressource';
-import { Stores } from '../../stores/stores';
+import Stores = require('../../stores/stores');
 import Operation from '../../data/item-operation';
 import { OperationControl } from './control-operation';
 

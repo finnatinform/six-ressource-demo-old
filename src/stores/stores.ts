@@ -4,16 +4,20 @@ import { AModuleStore } from './store-modules';
 import { AOperationStore } from './store-operations';
 import { AOrderStore } from './store-orders';
 
-export class Stores{
+class StoreWrapper{
     @Inject
-    public static RessourceStore : ARessourceStore ;
+    public RessourceStore : ARessourceStore ;
 
     @Inject
-    public static OperationStore : AOperationStore ;
+    public OperationStore : AOperationStore ;
 
     @Inject
-    public static OrderStore : AOrderStore ;
+    public OrderStore : AOrderStore ;
 
     @Inject
-    public static ModuleStore : AModuleStore ;
+    public ModuleStore : AModuleStore ;
 }
+
+// Needs Instance for Dependency Injection
+let Stores : StoreWrapper = new StoreWrapper();
+export = Stores ;

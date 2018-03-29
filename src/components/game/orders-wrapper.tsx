@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ProductionLevel } from './production-level';
-import { Stores } from '../../stores/stores';
+import Stores = require('../../stores/stores');
 import * as Collections from 'typescript-collections' ;
 import Ressource from '../../data/item-ressource';
 import Order from '../../data/item-Order';

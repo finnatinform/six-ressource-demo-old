@@ -7,9 +7,9 @@ export namespace Modules{
     export function registerModules() : Array<Module>{
         let HResult : Array<Module> = [] ;
 
-        HResult.push( new Module( '/game' , GameView ) );
-        HResult.push( new Module( '/settings' , SettingsView ) );
-        HResult.push( new Module( '/logo' , LogoView ) );
+        HResult.push( new Module( 'game' , GameView ) );
+        HResult.push( new Module( 'settings' , SettingsView ) );
+        HResult.push( new Module( 'logo' , LogoView ) );
 
         return HResult ;
     }

@@ -3,7 +3,7 @@ export default class Module{
     public Component : React.ComponentClass ;
 
     public get Path() : string {
-        return '/' + this.__Path ;
+        return this.__Path ;
     }
 
     constructor( _Path : string , _Component : React.ComponentClass ){        

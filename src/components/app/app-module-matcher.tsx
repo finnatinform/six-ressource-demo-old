@@ -1,11 +1,17 @@
 import * as React from 'react';
 import * as Styles from './app-module-matcher.scss' ;
 import Module from '../../internal/module';
-import { Switch, Route } from 'react-router';
+import { Switch, Route, match } from 'react-router';
 import { NotFoundView } from '../views/view-not-found';
 import Stores = require('../../stores/stores');
 
-export interface IAppModuleMatcherProps {  }
+export class ModuleMatcher{
+    module : string ;
+}
+
+export interface IAppModuleMatcherProps { 
+    match : match<ModuleMatcher> ;
+}
 export interface IAppModuleMatcherState {
     Modules : Array<Module> ;
 }
@@ -22,28 +28,22 @@ export class AppModuleMatcher extends React.Component<IAppModuleMatcherProps, IA
 
     constructor( _Props : IAppModuleMatcherProps ){
         super(_Props);
-        this.state = new AppModuleMatcherState ;
+        this.state = new AppModuleMatcherState() ;
     }
-    // TODO : this will not work! use :modules
-    private renderRoutes():Array<JSX.Element>{
-        let HRoutes : Array<JSX.Element> = [] ;
 
-        for( let HIndex : number = 0; HIndex < this.state.Modules.length ; HIndex++ ){
-            HRoutes.push(
-                <Route path={this.state.Modules[HIndex].Path} component={this.state.Modules[HIndex].Component} />
-            );
+    private renderActiveRoute():JSX.Element{
+        for( let HIndex : number = 0 ; HIndex < this.state.Modules.length ; HIndex++ ){
+            if( this.state.Modules[HIndex].Path == this.props.match.params.module ){
+                return React.createElement( this.state.Modules[HIndex].Component );
+            }
         }
-
-        return HRoutes ;
+        return <NotFoundView /> ;
     }
+
     render() {
         return (
             <div className={Styles.application}>
-                <Switch>
-                    
-                    {this.renderRoutes()}
-                    <Route component={NotFoundView} />
-                </Switch>
+                {this.renderActiveRoute()}
             </div>
         );
     }

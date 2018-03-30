@@ -30,6 +30,11 @@ export class ServerStore extends AServerStore{
         this.__Status = ServerStatus.SRV_STOPPED ;
     }
 
+    private RestartServer():void{
+        this.StopServer();
+        this.StartServer();
+    }
+
     constructor( @Inject _Dispatcher : Dispatcher<AppAction> ){
         super(_Dispatcher);
 

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp",
     "mobile": "cordova run android",
-    "starter:dev": "electron ./dist/electron" ,
+    "starter:dev": "electron ./dist/electron",
     "starter:prod": "electron-packager ./dist/electron six-ressource-demo --platform=win32 --arch=x64"
   },
   "repository": {
@@ -50,6 +50,8 @@
     "@types/react-dom": "^16.0.4",
     "@types/react-router": "^4.0.23",
     "@types/react-router-dom": "^4.2.6",
+    "@types/socket.io": "^1.4.33",
+    "@types/socket.io-client": "^1.4.32",
     "cordova": "^8.0.0",
     "cordova-android": "^7.0.0",
     "cordova-plugin-whitelist": "^1.3.3",
@@ -59,6 +61,8 @@
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "socket.io": "^2.1.0",
+    "socket.io-client": "^2.1.0",
     "typescript-collections": "^1.3.2",
     "typescript-ioc": "^1.1.1",
     "typescript-rest": "^1.4.0"

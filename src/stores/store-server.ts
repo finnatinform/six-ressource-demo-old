@@ -10,6 +10,7 @@ export abstract class AServerStore extends Store<AppAction> {
     public abstract get ServerStatus() : ServerStatus ;
 }
 
+// TODO: Make it async
 export class ServerStore extends AServerStore{
 
     private __Server : DesktopServer ;

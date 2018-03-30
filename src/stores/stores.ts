@@ -8,12 +8,14 @@ import { AOrderStore, OrderStore } from '../stores/store-orders';
 import { QueuedDispatcher } from '../app/app-dispatcher';
 import AppAction from '../app/app-action';
 import { Dispatcher } from 'flux';
+import { ServerStore, AServerStore } from './store-server';
 
 // Stores
 Container.bind(ARessourceStore).to(RessourceStore).scope(Scope.Singleton);
 Container.bind(AOperationStore).to(OperationStore).scope(Scope.Singleton);
 Container.bind(AOrderStore).to(OrderStore).scope(Scope.Singleton);
 Container.bind(AModuleStore).to(ModuleStore).scope(Scope.Singleton);
+Container.bind(AServerStore).to(ServerStore).scope(Scope.Singleton);
 
 // Services
 Container.bind(AMobileService).to(MobileService).scope(Scope.Singleton);
@@ -35,6 +37,9 @@ class StoreWrapper{
 
     @Inject
     public ModuleStore : AModuleStore ;
+
+    @Inject
+    public ServerStore : AServerStore ;
 }
 
 // Needs Instance for Dependency Injection

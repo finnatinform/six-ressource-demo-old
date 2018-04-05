@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { ProductionLevel } from './production-level';
-import Stores = require('../../stores/stores');
+import { ProductionLevel } from './../production/production-level';
+import Stores = require('../../../stores/stores');
 import * as Collections from 'typescript-collections' ;
-import Ressource from '../../data/item-ressource';
-import Order from '../../data/item-Order';
-import Operation from '../../data/item-operation';
+import Ressource from '../../../data/item-ressource';
+import Order from '../../../data/item-Order';
+import Operation from '../../../data/item-operation';
 import { OrdersRow } from './orders-row';
 
 export interface IOrderWrapperProps { }

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Ressource from '../../data/item-ressource';
-import Stores = require('../../stores/stores');
-import { RessourceControl } from './control-ressource';
+import Ressource from '../../../data/item-ressource';
+import Stores = require('../../../stores/stores');
+import { RessourceControl } from './../ressource/control-ressource';
 
 export interface IProductionLevelProps {
     Level : number ;

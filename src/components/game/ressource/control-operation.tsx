@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Stores = require('../../stores/stores');
-import Operation from '../../data/item-operation';
+import Stores = require('../../../stores/stores');
+import Operation from '../../../data/item-operation';
 
 export interface IOperationControlProps { 
     Ident : number ;

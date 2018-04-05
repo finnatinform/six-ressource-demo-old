@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Ressource from '../../data/item-ressource';
-import Stores = require('../../stores/stores');
-import Operation from '../../data/item-operation';
+import Ressource from '../../../data/item-ressource';
+import Stores = require('../../../stores/stores');
+import Operation from '../../../data/item-operation';
 import { OperationControl } from './control-operation';
 
 export interface IRessourceControlProps { 

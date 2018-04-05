@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Stores = require('../../stores/stores');
-import Order from '../../data/item-Order';
+import Stores = require('../../../stores/stores');
+import Order from '../../../data/item-Order';
 
 export interface IOrderControlProps { 
     Ident : number ;

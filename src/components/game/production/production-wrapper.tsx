@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ProductionLevel } from './production-level';
-import Stores = require('../../stores/stores');
+import Stores = require('../../../stores/stores');
 
 export interface IProductionWrapperProps { }
 export interface IProductionWrapperState {

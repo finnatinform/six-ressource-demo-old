@@ -1,106 +1,112 @@
 {
-    "Ressources" : 
+    "Ressourcesources" : 
         [
             {
                 "ID" : 1 ,
-                "NAME" : "Maschine 1" ,
-                "PRODUCTION_STEP" : 0
+                "Title" : "Maschine 1" ,
+                "ProductionStep" : 0 ,
+                "Icon" : "Ressourcesource-01"
             } ,
             {
                 "ID" : 2 ,
-                "NAME" : "Maschine 2" ,
-                "PRODUCTION_STEP" : 0
+                "Title" : "Maschine 2" ,
+                "ProductionStep" : 0 ,
+                "Icon" : "Ressourcesource-02"
             } ,
             {
                 "ID" : 3 ,
-                "NAME" : "Maschine 3" ,
-                "PRODUCTION_STEP" : 1
+                "Title" : "Maschine 3" ,
+                "ProductionStep" : 1 ,
+                "Icon" : "Ressourcesource-03"
             } ,
             {
                 "ID" : 4 ,
-                "NAME" : "Maschine 4" ,
-                "PRODUCTION_STEP" : 1
+                "Title" : "Maschine 4" ,
+                "ProductionStep" : 1 ,
+                "Icon" : "Ressourcesource-04"
             } ,
             {
                 "ID" : 5 ,
-                "NAME" : "Maschine 5" ,
-                "PRODUCTION_STEP" : 2
+                "Title" : "Maschine 5" ,
+                "ProductionStep" : 2 ,
+                "Icon" : "Ressourcesource-05"
             } ,
             {
                 "ID" : 6 ,
-                "NAME" : "Maschine 6" ,
-                "PRODUCTION_STEP" : 2
+                "Title" : "Maschine 6" ,
+                "ProductionStep" : 2 ,
+                "Icon" : "ressource-06"
             } 
         ] ,
     "Orders" :
             [
                 {
                     "ID" : 1 ,
-                    "PRIORITY" : 0
+                    "Priority" : 0
                 } ,
                 {
                     "ID" : 2 ,
-                    "PRIORITY" : 1
+                    "Priority" : 1
                 } ,
                 {
                     "ID" : 3 ,
-                    "PRIORITY" : 2
+                    "Priority" : 2
                 }
             ] ,
     "Operations" :
             [
                 {
                     "ID" : 1 ,
-                    "AUF" : 1 ,
-                    "RES" : 1 ,
+                    "Order" : 1 ,
+                    "Ressource" : 1 ,
                     "SCRIPT_TAG" : 0
                 } ,
                 {
                     "ID" : 2 ,
-                    "AUF" : 1 ,
-                    "RES" : 3 ,
+                    "Order" : 1 ,
+                    "Ressource" : 3 ,
                     "SCRIPT_TAG" : 1
                 } ,
                 {
                     "ID" : 3 ,
-                    "AUF" : 1 ,
-                    "RES" : 5 ,
+                    "Order" : 1 ,
+                    "Ressource" : 5 ,
                     "SCRIPT_TAG" : 2
                 } ,
                 {
                     "ID" : 4 ,
-                    "AUF" : 2 ,
-                    "RES" : 2 ,
+                    "Order" : 2 ,
+                    "Ressource" : 2 ,
                     "SCRIPT_TAG" : 1
                 } ,
                 {
                     "ID" : 5 ,
-                    "AUF" : 2 ,
-                    "RES" : 3 ,
+                    "Order" : 2 ,
+                    "Ressource" : 3 ,
                     "SCRIPT_TAG" : 2
                 } ,
                 {
                     "ID" : 6 ,
-                    "AUF" : 2 ,
-                    "RES" : 6 ,
+                    "Order" : 2 ,
+                    "Ressource" : 6 ,
                     "SCRIPT_TAG" : 3
                 } ,
                 {
                     "ID" : 7 ,
-                    "AUF" : 3 ,
-                    "RES" : 2 ,
+                    "Order" : 3 ,
+                    "Ressource" : 2 ,
                     "SCRIPT_TAG" : 0
                 } ,
                 {
                     "ID" : 8 ,
-                    "AUF" : 3 ,
-                    "RES" : 4 ,
+                    "Order" : 3 ,
+                    "Ressource" : 4 ,
                     "SCRIPT_TAG" : 1
                 } ,
                 {
                     "ID" : 9 ,
-                    "AUF" : 3 ,
-                    "RES" : 6 ,
+                    "Order" : 3 ,
+                    "Ressource" : 6 ,
                     "SCRIPT_TAG" : 2
                 } 
             ]

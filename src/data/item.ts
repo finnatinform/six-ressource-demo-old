@@ -1,3 +1,3 @@
 export default class Item {
-    public IDENT : number = -1 ;
+    public ID : number = -1 ;
 }

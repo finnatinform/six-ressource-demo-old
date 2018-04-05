@@ -1,14 +1,10 @@
 module.exports = {
-    entry: "./src/starter.ts",
+    entry: "./src/starter.tsx",
     output: {
-        filename: "starter.js",
+        filename: "starter-application.js",
         path: __dirname + "/dist"
     },
-    node: {
-        __dirname: false,
-        __filename: false
-    },
-    
+
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 
@@ -19,30 +15,32 @@ module.exports = {
 
     module: {
         rules: [
-            {
+            { 
                 enforce: "pre",
-                test: /\.scss$/,
-                use: [
-                    'style-loader',
+                test: /\.scss$/, 
+                use : [
+                    'style-loader' ,
                     {
-                        loader: 'typings-for-css-modules-loader',
-                        options: {
-                            modules: true,
-                            namedExport: true,
-                            camelCase: true,
+                        loader: 'typings-for-css-modules-loader' ,
+                        options:{
+                            modules: true ,
+                            namedExport: true ,
+                            camelCase: true ,
                             sass: true
                         }
                     }
                 ]
-            },
+            } ,
 
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
 
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }        
         ]
-    },
-
-    target: 'electron-renderer'
+    } ,
+    target : 'web' ,
+    node : {
+        fs : 'empty'
+    }
 };

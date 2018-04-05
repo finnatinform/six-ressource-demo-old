@@ -26,7 +26,8 @@ module.exports = {
                             namedExport: true ,
                             camelCase: true ,
                             importantLoaders: 1 ,
-                            sass: true
+                            sass: true ,
+                            localIdentName:  '[name]__[local]'
                         }
                     },
                     'sass-loader'

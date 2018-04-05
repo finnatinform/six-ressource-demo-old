@@ -8,7 +8,7 @@ export default abstract class DataStore<T extends Item> extends Store< AppAction
     private __Items : Array<T> ;
 
     public ItemByIdent( _Ident : number ):T{
-        let HItems : Array<T> = this.SearchItemsByCondition( ( _Item : T ) => { return _Item.IDENT == _Ident ; } );
+        let HItems : Array<T> = this.SearchItemsByCondition( ( _Item : T ) => { return _Item.ID == _Ident ; } );
         switch (HItems.length) {
             case 0:
                 throw new Error('Item not found');

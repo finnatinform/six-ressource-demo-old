@@ -34,6 +34,8 @@
     "gulp-jest": "^4.0.2",
     "jest": "^22.4.3",
     "jest-cli": "^22.4.3",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.3",
     "tslint": "^5.9.1",

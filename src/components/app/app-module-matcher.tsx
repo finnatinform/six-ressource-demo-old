@@ -1,9 +1,9 @@
 import * as React from 'react';
-import * as Styles from './app-module-matcher.scss' ;
 import Module from '../../internal/module';
 import { Switch, Route, match } from 'react-router';
 import { NotFoundView } from '../views/view-not-found';
-import Stores = require('../../stores/stores');
+import Stores = require('../../stores/stores-application');
+import * as Styles from './app-module-matcher.scss' ;
 
 export class ModuleMatcher{
     module : string ;

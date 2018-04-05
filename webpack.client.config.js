@@ -15,22 +15,23 @@ module.exports = {
 
     module: {
         rules: [
-            { 
-                enforce: "pre",
-                test: /\.scss$/, 
+            {
+                test : /\.scss$/ ,
                 use : [
-                    'style-loader' ,
+                    'style-loader',
                     {
-                        loader: 'typings-for-css-modules-loader' ,
+                        loader: 'typings-for-css-modules-loader',
                         options:{
                             modules: true ,
                             namedExport: true ,
                             camelCase: true ,
+                            importantLoaders: 1 ,
                             sass: true
                         }
-                    }
+                    },
+                    'sass-loader'
                 ]
-            } ,
+            },
 
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" },

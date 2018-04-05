@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Ressource from '../../../data/item-ressource';
-import Stores = require('../../../stores/stores');
+import Stores = require('../../../stores/stores-application');
 import { RessourceControl } from './../ressource/control-ressource';
 
 export interface IProductionLevelProps {
@@ -30,7 +30,7 @@ export class ProductionLevel extends React.Component<IProductionLevelProps, IPro
 
         for( let HIndex : number = 0; HIndex < this.state.Ressources.length ; HIndex++ ){
             HResult.push(
-                <RessourceControl Ident={this.state.Ressources[HIndex].IDENT} />
+                <RessourceControl Ident={this.state.Ressources[HIndex].ID} />
             );
         }
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Ressource from '../../../data/item-ressource';
-import Stores = require('../../../stores/stores');
+import Stores = require('../../../stores/stores-application');
 import Operation from '../../../data/item-operation';
 import { OperationControl } from './control-operation';
 
@@ -35,7 +35,7 @@ export class RessourceControl extends React.Component<IRessourceControlProps, IR
 
         for( let HIndex : number = 0; HIndex < this.state.Operations.length ; HIndex++ ){
             HResult.push(
-                <OperationControl Ident={this.state.Operations[HIndex].IDENT} />
+                <OperationControl Ident={this.state.Operations[HIndex].ID} />
             );
         }
 

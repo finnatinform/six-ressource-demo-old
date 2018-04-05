@@ -20,12 +20,20 @@ gulp.task('buildServer', buildServer);
  */
 function defaultTask(_Done) {
     // return gulp.src('./src').pipe(jest(jestConfiguration));
+    process.on('unhandledRejection', (reason, p) => {
+        console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+        // application specific logging, throwing an error, or other logic here
+      });
+      
     buildClient()
-        .then(buildStarterApplication)
-        .then(buildStarter)
-        .then(deployStarter)
+        // .then(buildStarterApplication)
+        // .then(buildStarter)
+        // .then(deployStarter)
         // .then(buildServer)
         // .then(deployDesktop)
+        .then(buildClient)
+        .then(buildServer)
+        .then(deployDesktop)
         .then(function () {
             _Done();
         });

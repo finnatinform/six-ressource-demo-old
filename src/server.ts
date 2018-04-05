@@ -2,12 +2,10 @@ import Express = require('express');
 import http = require('http');
 import { Server } from 'typescript-rest' ;
 import Controller from './controller/controller' ;
-import * as SocketIO from 'socket.io';
 
 export default class DesktopServer{
     private __Application : Express.Application ;
 
-    private __IO : SocketIO.Server ;
     private __Server : http.Server ;
     private __Port : number = 8080 ;
 
@@ -26,13 +24,11 @@ export default class DesktopServer{
         // Bind Context to Event Handlers
         this.onServerStart = this.onServerStart.bind(this);
         this.onServerStop = this.onServerStop.bind(this);
-        this.socketListener = this.socketListener.bind(this);
         this.onPayLoadReceive = this.onPayLoadReceive.bind(this);
     }
 
     private onPayLoadReceive( _Event : string , _PayLoad : any ):void{
         // Broadcast to all clients
-        this.__IO.emit( _Event , _PayLoad );
     }
 
     private configurateMiddleware():void{
@@ -50,12 +46,6 @@ export default class DesktopServer{
         );
 
         // Initialize SocketIO
-        this.__IO = SocketIO(this.__Server);
-        this.__IO.on('connect', this.socketListener);
-    }
-
-    private socketListener( _Socket : SocketIO.Socket ):void{
-        _Socket.on( '*' , this.onPayLoadReceive );
     }
 
     /**
@@ -73,3 +63,6 @@ export default class DesktopServer{
         console.log('server stopped');
     }
 }
+
+let HServer : DesktopServer = new DesktopServer();
+HServer.start();

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Stores = require('../../../stores/stores');
+import Stores = require('../../../stores/stores-application');
 import Order from '../../../data/item-Order';
 
 export interface IOrderControlProps { 

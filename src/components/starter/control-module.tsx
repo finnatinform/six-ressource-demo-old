@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { HashRouter } from 'react-router-dom';
 import Module from '../../internal/module';
-import Stores = require('../../stores/stores');
+import Stores = require('../../stores/stores-application');
 
 export interface IModuleControlProps {
     Module : Module ;

@@ -22,5 +22,8 @@ module.exports = {
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
     } ,
-    target : 'node'
+    target : 'node' ,
+    node : {
+        net : 'empty'
+    }
 };

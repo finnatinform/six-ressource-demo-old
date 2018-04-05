@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ProductionLevel } from './../production/production-level';
-import Stores = require('../../../stores/stores');
+import Stores = require('../../../stores/stores-application');
 import * as Collections from 'typescript-collections' ;
 import Ressource from '../../../data/item-ressource';
 import Order from '../../../data/item-Order';
@@ -24,7 +24,7 @@ export class OrderWrapperState implements IOrderWrapperState{
         let HRessources : Array<Ressource> = Stores.RessourceStore.getRessourcesForProductionLevel(0);
 
         for( let HIndex : number = 0; HIndex < HRessources.length ; HIndex++ ){
-            let HOperations = Stores.OperationStore.OperationsForRessource(HRessources[HIndex].IDENT) ;
+            let HOperations = Stores.OperationStore.OperationsForRessource(HRessources[HIndex].ID) ;
 
             let HOrders : Array<number> = [] ;
             for( let HOperationIndex : number = 0; HOperationIndex < HOperations.length ; HOperationIndex++ ){

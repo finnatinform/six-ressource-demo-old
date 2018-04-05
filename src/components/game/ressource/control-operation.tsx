@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Stores = require('../../../stores/stores');
+import Stores = require('../../../stores/stores-application');
 import Operation from '../../../data/item-operation';
 
 export interface IOperationControlProps { 
